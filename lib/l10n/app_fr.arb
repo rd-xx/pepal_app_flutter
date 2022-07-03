@@ -1,3 +1,7 @@
 {
-    "helloWorld": "Bonjour monde !"
+  "@@locale": "fr",
+  "buttonPressed": "Vous avez touché le bouton ce nombre de fois:",
+  "@buttonPressed": {
+    "description": "Montre combien de fois le bouton a été préssé."
+  }
 }

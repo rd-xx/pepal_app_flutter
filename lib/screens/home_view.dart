@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pepal_app/screens/appbar_view.dart';
 
 import 'drawer_view.dart';
@@ -65,10 +66,8 @@ class _HomeViewState extends State<HomeView> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+          children: [
+            Text(AppLocalizations.of(context)!.buttonPressed),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
