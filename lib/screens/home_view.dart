@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pepal_app/views/appbar_view.dart';
+import 'package:pepal_app/screens/appbar_view.dart';
 
 import 'drawer_view.dart';
 
@@ -32,12 +32,6 @@ class _HomeViewState extends State<HomeView> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
     });
   }
 
