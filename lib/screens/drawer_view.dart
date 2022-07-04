@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pepal_app/screens/home_view.dart';
 
 import 'grades_view.dart';
@@ -38,24 +39,26 @@ class _DrawerViewState extends State<DrawerView> {
         ),
         ListTile(
           leading: const Icon(Icons.home),
-          title: const Text('Accueil'),
+          title: Text(AppLocalizations.of(context)!.drawerCategory1),
           selected: widget.selectIndex == 0,
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const HomeView(title: "Accueil")));
+                    builder: (context) => HomeView(
+                        title: AppLocalizations.of(context)!.drawerCategory1)));
           },
         ),
         ListTile(
           leading: const Icon(Icons.school),
-          title: const Text('Notes'),
+          title: Text(AppLocalizations.of(context)!.drawerCategory2),
           selected: widget.selectIndex == 1,
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const GradesView(title: "Notes")));
+                    builder: (context) => GradesView(
+                        title: AppLocalizations.of(context)!.drawerCategory2)));
           },
         ),
         const Divider(
@@ -64,7 +67,7 @@ class _DrawerViewState extends State<DrawerView> {
         ),
         ListTile(
           leading: const Icon(Icons.settings),
-          title: const Text('Paramètres'),
+          title: Text(AppLocalizations.of(context)!.drawerCategory3),
           selected: widget.selectIndex == 3,
         ),
       ],

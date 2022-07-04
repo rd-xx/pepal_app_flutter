@@ -3,5 +3,8 @@
   "buttonPressed": "Vous avez touché le bouton ce nombre de fois:",
   "@buttonPressed": {
     "description": "Montre combien de fois le bouton a été préssé."
-  }
+  },
+  "drawerCategory1": "Accueil",
+  "drawerCategory2": "Notes",
+  "drawerCategory3": "Paramètres"
 }
