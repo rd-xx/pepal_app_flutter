@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:pepal_app/screens/appbar_view.dart';
 
-import 'drawer_view.dart';
+import '../widgets/botnav_view.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -27,11 +15,6 @@ class _HomeViewState extends State<HomeView> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -45,8 +28,7 @@ class _HomeViewState extends State<HomeView> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBarView(title: widget.title),
-      drawer: DrawerView(title: widget.title, selectIndex: 0),
+      bottomNavigationBar: const BottomNavView(currentIndex: 0),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
