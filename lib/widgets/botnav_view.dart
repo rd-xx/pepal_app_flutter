@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pepal_app/screens/account_view.dart';
 import 'package:pepal_app/screens/debug_view.dart';
 import 'package:pepal_app/screens/home_view.dart';
@@ -31,17 +32,20 @@ class _BottomNavViewState extends State<BottomNavView> {
             label: "3", icon: Icon(Icons.bug_report_rounded))
       ],
       onTap: (index) {
-        var views = const [
-          HomeView(),
-          ScheduleView(),
-          AccountView(),
-          DebugView()
-        ];
-        Navigator.push(
-            context,
-            PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    views[index]));
+        switch (index) {
+          case 0:
+            Get.to(() => const HomeView());
+            break;
+          case 1:
+            Get.to(() => const ScheduleView());
+            break;
+          case 2:
+            Get.to(() => const AccountView());
+            break;
+          case 3:
+            Get.to(() => const DebugView());
+            break;
+        }
       },
     );
   }
