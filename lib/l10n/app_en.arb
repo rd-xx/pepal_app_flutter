@@ -4,7 +4,7 @@
   "@buttonPressed": {
     "description": "Shows how many times the button have been pressed."
   },
-  "drawerCategory1": "Home",
-  "drawerCategory2": "Grades",
-  "drawerCategory3": "Settings"
+  "login": "Login",
+  "username": "Username",
+  "password": "Password"
 }
