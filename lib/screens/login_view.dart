@@ -23,6 +23,11 @@ class _LoginViewState extends State<LoginView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(
+                "assets/logo.png",
+                width: 100,
+                height: 50,
+              ),
               TextFormField(
                 decoration: InputDecoration(
                     icon: const Icon(Icons.email),
