@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
+import 'package:pepal_app/classes/pepal_class.dart';
 
 import '../widgets/botnav_view.dart';
-
-Future<http.Response> login(String username, String password) async {
-  var map = <String, dynamic>{};
-  map["login"] = username;
-  map["pass"] = password;
-
-  final response = await http
-      .post(Uri.parse("https://www.pepal.eu/include/php/ident.php"), body: map);
-
-  print(response.headers);
-  return response;
-}
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -26,6 +15,8 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  Pepal pepalController = Pepal();
   Future<http.Response>? _futureCookie;
 
   @override
@@ -74,8 +65,8 @@ class _LoginViewState extends State<LoginView> {
         ElevatedButton.icon(
           onPressed: () {
             setState(() {
-              _futureCookie =
-                  login(_usernameController.text, _passwordController.text);
+              _futureCookie = pepalController.login(
+                  _usernameController.text, _passwordController.text);
             });
           },
           icon: const Icon(Icons.person_add),
