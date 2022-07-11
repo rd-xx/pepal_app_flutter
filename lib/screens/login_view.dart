@@ -35,7 +35,8 @@ class _LoginViewState extends State<LoginView> {
                 width: 100,
                 height: 50,
               ),
-              (_futureCookie == null) ? buildColumn() : buildFutureBuilder(),
+              const SizedBox(height: 60),
+              (_futureCookie == null) ? loginForm() : futureBuilder(),
             ],
           ),
         ),
@@ -43,7 +44,7 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  Column buildColumn() {
+  Column loginForm() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -53,6 +54,7 @@ class _LoginViewState extends State<LoginView> {
               icon: const Icon(Icons.email),
               labelText: AppLocalizations.of(context)!.username),
         ),
+        const SizedBox(height: 20),
         TextFormField(
           controller: _passwordController,
           decoration: InputDecoration(
@@ -62,6 +64,7 @@ class _LoginViewState extends State<LoginView> {
           enableSuggestions: false,
           autocorrect: false,
         ),
+        const SizedBox(height: 50),
         ElevatedButton.icon(
           onPressed: () {
             setState(() {
@@ -76,7 +79,7 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  FutureBuilder<http.Response> buildFutureBuilder() {
+  FutureBuilder<http.Response> futureBuilder() {
     return FutureBuilder<http.Response>(
       future: _futureCookie,
       builder: (context, snapshot) {
