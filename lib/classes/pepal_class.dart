@@ -9,7 +9,6 @@ class Pepal {
         body:
             jsonEncode(<String, String>{'login': username, 'pass': password}));
 
-    print(response);
     return response;
   }
 }
