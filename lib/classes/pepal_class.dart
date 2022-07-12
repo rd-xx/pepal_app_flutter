@@ -1,11 +1,12 @@
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 import 'grade_class.dart';
 
 class Pepal {
-  Future<http.Response> login(String username, String password) async {
+  dynamic cookie;
+  List<Grade> grades = [];
+
+  Future<String> login(String username, String password) async {
     final response = await http.post(
         Uri.parse("https://www.pepal.eu/include/php/ident.php"),
         body: {"login": username, "pass": password});
