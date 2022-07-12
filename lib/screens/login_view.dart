@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:http/http.dart' as http;
 import 'package:pepal_app/classes/pepal_class.dart';
 
 import '../widgets/botnav_view.dart';
@@ -17,7 +16,7 @@ class _LoginViewState extends State<LoginView> {
   final TextEditingController _passwordController = TextEditingController();
 
   Pepal pepalController = Pepal();
-  Future<http.Response>? _futureCookie;
+  Future<String>? _futureCookie;
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +78,12 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  FutureBuilder<http.Response> futureBuilder() {
-    return FutureBuilder<http.Response>(
+  FutureBuilder<String> futureBuilder() {
+    return FutureBuilder<String>(
       future: _futureCookie,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return Text(snapshot.data!.headers.toString());
+          return Text(snapshot.data!.length.toString());
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
         }
